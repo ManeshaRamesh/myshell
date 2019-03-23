@@ -1,0 +1,7 @@
+To do List
+
+1. Empty strings also get added to the history file
+2. Need to remove quotes from the arguments - grep command
+3. add redirection
+4. implment echo command
+5. double free or corruption error when freeing pipes in shell.c

@@ -1,0 +1,120 @@
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+ls
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+ls
+cat README
+exit
+ls
+exit
+cat README
+exit
+cat README
+exit
+cat README
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+pwd
+history
+wxit
+exit
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+exit
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+history
+exit
+pwd
+EXIT
+eit
+exit
+history
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+ls
+ls -l
+coooll
+exit
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+ls
+ls -l
+coooll
+exit
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+history
+exit
+exit
+hello
+exit
+hello
+exit
+exit
+hello
+hello
+hello
+history
+exit
+hello
+exit
+history|wc -l
+history|wc -l
+history|wc -l
+history
+cat README|wc -l
+cat README|wc -l
+cat README|wc -l
+history
+exit
+history|wc -l
+history|wc -l
+history|wc -l
+history
+exit
+exit
+history |wc -l
+history |wc -l
+history |wc -l
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+history |wc -l
+history |wc -l
+history|wc -l
+history|wc -l
+history|wc -l
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+history|wc -l
+history|wc -l
+exit
+history|wc -l
+history|wc -l
+history|wc -l
+exit
+cat README|ec 
+cat README|ec 
+cat README|ec 
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+cat README|ec
+cat README|ec
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+cat README| wc
+cat README|ec
+cat README|ec
+exit 
+cat README| wc
+cat README| wc
+cat README| wc
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+cat README|wc
+exit
+cat README|wc -l
+cat README|wc -l
+cat README|wc -l
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+cat READM|wc -l
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+cat README|ec -l
+cat README|ec -l
+cat READMe|wc -l
+cat README|wc -l
+exit
