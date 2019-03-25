@@ -5,3 +5,6 @@ To do List
 3. add redirection
 4. implment echo command
 5. double free or corruption error when freeing pipes in shell.c
+6. handling unexpected termination
+7. seg fault when only ! is entered
+8. infinite loop of >> when I enter cat > input.txt

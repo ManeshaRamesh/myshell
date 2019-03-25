@@ -28,19 +28,31 @@ int main(){
                 }
             int iter =BEGIN_COUNT;
             int pipe_count = BEGIN_COUNT;
-            // int redirec_out = 0;
-            // int redirec_in = 0;
+            int redin_count = BEGIN_COUNT;
+            int redout_count = BEGIN_COUNT;
             //counts the number of '|' characters
             while (input[iter] != '\n'){
                 if (input[iter] == '|') pipe_count++;
+                if (input[iter] == '>') redin_count++;
+                if (input[iter] == '<') redout_count++;
                 iter++;
             }
             
             //if it is a simple command
             if (pipe_count == 0){ 
                 //printf("simple command");
-                parsed_input = parse(input, fstream);// takes teh user input splits it and returns it as an array of strings
-                status = execute(parsed_input, fstream);
+                if (redin_count || redout_count){
+                    char** piped_cmds = malloc(sizeof(char*)*(pipe_count+1));
+                    storeInHistory(input, fstream);
+                    piped_cmds[0] = input;
+                    status = execute_pipes(piped_cmds, 0, fstream);
+                }
+                else{
+                    parsed_input = parse(input, fstream);// takes teh user input splits it and returns it as an array of strings
+                    status = execute(parsed_input, fstream);
+                }
+                
+
             }
             else{//piped command
                 //printf("piped command");

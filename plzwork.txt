@@ -1,0 +1,10 @@
+	819 history | wc > plz.txt
+	820 history | wc > plz.txt |pwd
+	821 history | wc > plz.txt |pwd
+	822 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	823 history | wc > plz.txt |pwd
+	824 history | wc > plz.txt |pwd
+	825 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	826 history | wc > plz.txt |pwd
+	827 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	828 history | tail -10 > plzwork.txt

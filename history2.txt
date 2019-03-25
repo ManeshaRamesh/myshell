@@ -1,0 +1,860 @@
+	1 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	2 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	3 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	4 ls
+	5 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	6 ls
+	7 cat README
+	8 exit
+	9 ls
+	10 exit
+	11 cat README
+	12 exit
+	13 cat README
+	14 exit
+	15 cat README
+	16 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	17 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	18 pwd
+	19 history
+	20 wxit
+	21 exit
+	22 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	23 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	24 exit
+	25 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	26 history
+	27 exit
+	28 pwd
+	29 EXIT
+	30 eit
+	31 exit
+	32 history
+	33 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	34 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	35 ls
+	36 ls -l
+	37 coooll
+	38 exit
+	39 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	40 ls
+	41 ls -l
+	42 coooll
+	43 exit
+	44 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	45 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	46 history
+	47 exit
+	48 exit
+	49 hello
+	50 exit
+	51 hello
+	52 exit
+	53 exit
+	54 hello
+	55 hello
+	56 hello
+	57 history
+	58 exit
+	59 hello
+	60 exit
+	61 history|wc -l
+	62 history|wc -l
+	63 history|wc -l
+	64 history
+	65 cat README|wc -l
+	66 cat README|wc -l
+	67 cat README|wc -l
+	68 history
+	69 exit
+	70 history|wc -l
+	71 history|wc -l
+	72 history|wc -l
+	73 history
+	74 exit
+	75 exit
+	76 history |wc -l
+	77 history |wc -l
+	78 history |wc -l
+	79 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	80 history |wc -l
+	81 history |wc -l
+	82 history|wc -l
+	83 history|wc -l
+	84 history|wc -l
+	85 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	86 history|wc -l
+	87 history|wc -l
+	88 exit
+	89 history|wc -l
+	90 history|wc -l
+	91 history|wc -l
+	92 exit
+	93 cat README|ec 
+	94 cat README|ec 
+	95 cat README|ec 
+	96 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	97 cat README|ec
+	98 cat README|ec
+	99 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	100 cat README| wc
+	101 cat README|ec
+	102 cat README|ec
+	103 exit 
+	104 cat README| wc
+	105 cat README| wc
+	106 cat README| wc
+	107 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	108 cat README|wc
+	109 exit
+	110 cat README|wc -l
+	111 cat README|wc -l
+	112 cat README|wc -l
+	113 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	114 cat READM|wc -l
+	115 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	116 cat README|ec -l
+	117 cat README|ec -l
+	118 cat READMe|wc -l
+	119 cat README|wc -l
+	120 exit
+	121 ls
+	122 cat > hello.txt
+	123 cat history | head -10 > hello.txt
+	124 cat history | head -10 > hello.txt
+	125 cat history | head -10 > hello.txt
+	126 exit
+	127 cat > hello.txt
+	128 exit
+	129 ls
+	130 exit
+	131 cat history | head -10 > hello.txt
+	132 cat history | head -10 > hello.txt
+	133 cat history | head -10 > hello.txt
+	134 exit
+	135 cat history | head -10 > hello.txt
+	136 cat history | head -10 > hello.txt
+	137 cat history | head -10 > hello.txt
+	138 exit
+	139 cat history | head -10 > hello.txt
+	140 cat history | head -10 > hello.txt
+	141 cat history | head -10 > hello.txt
+	142 exit
+	143 cat history | head -10 > hello.txt
+	144 cat history | head -10 > hello.txt
+	145 cat history | head -10 > hello.txt
+	146 exit
+	147 cat history | head -10 > hello.txt
+	148 cat history | head -10 > hello.txt
+	149 cat history | head -10 > hello.txt
+	150 exit
+	151 cat history | head -10 > hello.txt
+	152 cat history | head -10 > hello.txt
+	153 cat history | head -10 > hello.txt
+	154 exit
+	155 cat history | head -10 > hello.txt
+	156 cat history | head -10 > hello.txt
+	157 cat history | head -10 > hello.txt
+	158 exit
+	159 cat history | head -10 > hello.txt
+	160 cat history | head -10 > hello.txt
+	161 cat history | head -10 > hello.txt
+	162 exit
+	163 cat history | head -10 > hello.txt
+	164 cat history | head -10 > hello.txt
+	165 cat history | head -10 > hello.txt
+	166 exit
+	167 cat history | head -10 > hello.txt
+	168 cat history | head -10 > hello.txt
+	169 cat history | head -10 > hello.txt
+	170 exit
+	171 cat history | head -10 > hello.txt
+	172 cat history | head -10 > hello.txt
+	173 cat history | head -10 > hello.txt
+	174 exit
+	175 cat history | head -10 > hello.txt
+	176 cat history | head -10 > hello.txt
+	177 cat history | head -10 > hello.txt
+	178 exit
+	179 cat history | head -10 > hello.txt
+	180 cat history | head -10 > hello.txt
+	181 cat history | head -10 > hello.txt
+	182 exit
+	183 cat history | head -10 > hello.txt
+	184 cat history | head -10 > hello.txt
+	185 cat history | head -10 > hello.txt
+	186 exit
+	187 cat history | head -10 > hello.txt
+	188 cat history | head -10 > hello.txt
+	189 cat history | head -10 > hello.txt
+	190 cat hello.txt
+	191 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	192 cat history | head -10 > hello.txt
+	193 history | head -10 > hello.txt
+	194 o.txt
+	195 cat hello.txt
+	196 exit
+	197 cat hello.txt
+	198 exit
+	199 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	200 
+	201 
+	202 cat history | head -10 > hello.txt
+	203 history | head -10 > hello.txt
+	204 history | head -10 > hello.txt
+	205 cat hello.txt
+	206 exit
+	207 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	208 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	209 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	210 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	211 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	212 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	213 history|head-10 > hello1.txt
+	214 history|head-10 > hello1.txt
+	215 history|head-10 > hello1.txt
+	216 history
+	217 history| head -10
+	218 history| head -10
+	219 history | head -10 > hello.txt
+	220 history| head -10
+	221 history | head -10 > hello.txt
+	222 exit
+	223 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	224 history|head -10 > hello.txt
+	225 history|head -10 > hello.txt
+	226 exit
+	227 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	228 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	229 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	230 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	231 history|head -10 > hello.txt
+	232 history|head -10 > hello.txt
+	233 EXIT
+	234 exit
+	235 EXIT
+	236 exit
+	237 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	238 exit
+	239 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	240 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	241 history | head -10 > hello.txt
+	242 history | head -10 > hello.txt
+	243 exit
+	244 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	245 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	246 
+	247 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	248 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	249 history|head -10 > hello.txt
+	250 history|head -10 > hello.txt
+	251 exit
+	252 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	253 export
+	254 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	255 export
+	256 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	257 history | head -10 > hello.txt
+	258 history | head -10 > hello.txt
+	259 exit
+	260 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	261 history|head -10 > hello.txt
+	262 history|head -10 > hello.txt
+	263 exit
+	264 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	265 history | head -10 > hello.txt
+	266 history | head -10 > hello.txt
+	267 exit
+	268 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	269 history | head -10 > hello.txt
+	270 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	271 history |head -10 > hello.txt
+	272 history |head -10 > hello.txt
+	273 exit
+	274 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	275 history |head -10
+	276 history | head -10 > hello.txt 
+	277 exit
+	278 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	279 history|head -10 > hello.txt
+	280 exit
+	281 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	282 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	283 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	284 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	285 history|head -10 > hello.txt
+	286 exit
+	287 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	288 history|head -10 > hello.txt
+	289 exit
+	290 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	291 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	292 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	293 history|head -10 > hello.txt
+	294 exit
+	295 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	296 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	297 history| head -10 > hello.txt
+	298 exit
+	299 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	300 history|head -10 > hello.txt
+	301 exit
+	302 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	303 history|head -10 > hello.txt
+	304 exit
+	305 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	306 history|head -10 > hello.txt
+	307 exit
+	308 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	309 history|head -10 > hello.txt
+	310 history
+	311 history|head -10
+	312 exit
+	313 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	314 history | head -0 
+	315 history | head -0 
+	316 exit
+	317 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	318 history | head -0
+	319 history | head -0
+	320 exit
+	321 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	322 history | head -10
+	323 history | head -10
+	324 exit
+	325 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	326 history | head -10
+	327 history | head -10
+	328 exit
+	329 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	330 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	331 history | head -10
+	332 history | head -10
+	333 exit
+	334 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	335 history | head -10
+	336 history | head -10
+	337 exit
+	338 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	339 history | head -10
+	340 history | head -10
+	341 history| head -10
+	342 history| head -10
+	343 history | head -10 > hello.txt
+	344 history | head -10 > hello.txt
+	345 exit
+	346 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	347  history | head -10 > hello.txt
+	348  history | head -10 > hello.txt
+	349  history | head -10 
+	350  history | head -10 
+	351 exit
+	352 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	353  history | head -10 > hello.txt
+	354  history | head -10 > hello.txt
+	355 exit
+	356 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	357 history | head -10 > hello.txt
+	358 history | head -10 > hello.txt
+	359 exit
+	360 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	361 history | head -10 > hello.txt
+	362 history | head -10 > hello.txt
+	363 exit
+	364 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	365 history | head -10
+	366 history | head -10
+	367 exit
+	368 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	369 export
+	370 history | head -10
+	371 history | head -10
+	372 exit
+	373 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	374 history | head -10
+	375 history | head -10
+	376 exit
+	377 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	378 history | head -10
+	379 history | head -10
+	380 exit
+	381 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	382 j = 0;
+	383 				while (parsed_command[j] != NULL){
+	384 						//printf("yess\n");
+	385 						printf("%s\n",parsed_redirection[j]);
+	386 						j++;				
+	387 				}history | head -10 > hello.txt
+	388 				}history | head -10 > hello.txt
+	389 exit
+	390 						j++;				
+	391 exit
+	392 						printf("%s\n",parsed_redirection[j]);
+	393 exit
+	394 						//printf("yess\n");
+	395 
+	396 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	397 history | head -10
+	398 history | head -10
+	399 exit
+	400 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	401 history | head -10
+	402 history | head -10
+	403 exit
+	404 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	405 history | head -10
+	406 history | head -10
+	407 exit
+	408 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	409 history | head -10
+	410 history | head -10
+	411 exit
+	412 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	413 if (parsed_redirection ==NULL){
+	414 					printf(" no redirection");
+	415 				}history | head -10
+	416 				}history | head -10
+	417 export
+	418 history | head -10
+	419 history | head -10
+	420 exit
+	421 					printf(" no redirection");
+	422 exit
+	423 if (parsed_redirection ==NULL){
+	424 exit
+	425 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	426 history | head -10
+	427 history | head -10
+	428 exit
+	429 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	430 history | head -10
+	431 history | head -10
+	432 exit
+	433 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	434 history | head -10
+	435 history | head -10
+	436 exit
+	437 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	438 history | head -10
+	439 history | head -10
+	440 exit
+	441 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	442 history | head -10
+	443 history | head -10
+	444 exit
+	445 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	446 history | head -10
+	447 history | head -10
+	448 history|head -10| wc 
+	449 history|head -10| wc 
+	450 exit
+	451 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	452 history | wc -l
+	453 history | wc -l
+	454 exit
+	455 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	456 if (parsed_redirection ==NULL){
+	457 					printf("no redirection\n");
+	458 				}
+	459 				else{
+	460 					printf("yes redirection\n");
+	461 				}history | wc -l
+	462 				}history | wc -l
+	463 history | wc -l
+	464 history | wc -l
+	465 exit
+	466 					printf("yes redirection\n");
+	467 exit
+	468 				else{
+	469 exit
+	470 				}
+	471 exit
+	472 					printf("no redirection\n");
+	473 exit
+	474 if (parsed_redirection ==NULL){
+	475 exit
+	476 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	477 history | wc -l
+	478 history | wc -l
+	479 exit
+	480 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	481 history | head -10 > hello.txt
+	482 history | head -10 > hello.txt
+	483 exit
+	484 1!
+	485 history | head -10 > hello.txt
+	486 history | head -10 > hello.txt
+	487 history | head -10 > hello.txt
+	488 history | head -10 > hello.txt
+	489 history | head -10 > hello.txt
+	490 history | head -10 > hello.txt
+	491 1!
+	492 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	493 history | head -10 > hello.txt
+	494 history | head -10 > hello.txt
+	495 exit
+	496 1!
+	497 exit
+	498 1!
+	499 exit
+	500 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	501 history | head -10 > hello.txt
+	502 history | head -10 > hello.txt
+	503 exit
+	504 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	505 history | head -10 > hello.txt
+	506 history | head -10 > hello.txt
+	507 exit
+	508 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	509 history | head -10 > hello.txt
+	510 history | head -10 > hello.txt
+	511 exit
+	512 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	513 history | head -10 > hello.txt
+	514 history | head -10 > hello.txt
+	515 exit
+	516 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	517 history | head -10 > hello.txt
+	518 history | head -10 > hello.txt
+	519 exit
+	520 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	521 history | head -10 > hello.txt
+	522 history | head -10 > hello.txt
+	523 history | head -10 > hello.txt
+	524 history | head -10 > hello.txt
+	525 exit
+	526 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	527 history | head -10 > hello.txt
+	528 history | head -10 > hello.txt
+	529 exit
+	530 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	531 history | head -10 > hello.txt
+	532 history | head -10 > hello.txt
+	533 exit
+	534 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	535 history | head -10 > hello.txt
+	536 history | head -10 > hello.txt
+	537 exit
+	538 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	539 history | head -10 > hello.txt
+	540 history | head -10 > hello.txt
+	541 exit
+	542 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	543 history | head -10 > hello.txt
+	544 history | head -10 > hello.txt
+	545 exit
+	546 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	547 history | head -10 > hello.txt
+	548 history | head -10 > hello.txt
+	549 exit
+	550 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	551 history | head -10 > hello.txt
+	552 history | head -10 > hello.txt
+	553 exit
+	554 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	555 history | head -10 > hello.txt
+	556 history | head -10 > hello.txt
+	557 history | head -10 > hello.txt
+	558 history | head -10 > hello.txt
+	559 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	560 history | head -10 > hello.txt
+	561 history | head -10 > hello.txt
+	562 exit
+	563 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	564 history | head -10 > hello.txt
+	565 history | head -10 > hello.txt
+	566 exit
+	567 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	568 history | head -10 > hello.txt
+	569 history | head -10 > hello.txt
+	570 exit
+	571 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	572 history | head -10 > hello.txt
+	573 history | head -10 > hello.txt
+	574 exit
+	575 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	576 history | head -10 > hello.txt
+	577 history | head -10 > hello.txt
+	578 exit
+	579 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	580  history | head -10 > hello.txt
+	581  history | head -10 > hello.txt
+	582 exit
+	583 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	584 history | head -10 > hello.txt
+	585 history | head -10 > hello.txt
+	586 exit
+	587 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	588 history | head -10 > hello.txt
+	589 history | head -10 > hello.txt
+	590 exit
+	591 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	592 history | head -10 > hello.txt
+	593 history | head -10 > hello.txt
+	594 exit
+	595 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	596 history | head -10 > hello.txt
+	597 history | head -10 > hello.txt
+	598 exit
+	599 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	600 history | head -10 > hello.txt
+	601 history | head -10 > hello.txt
+	602 exit
+	603 exit
+	604 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	605 history | head -10 > hello.txt
+	606 history | head -10 > hello.txt
+	607 exit
+	608 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	609 history | head -10 > hello.txt
+	610 history | head -10 > hello.txt
+	611 exit
+	612 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	613 history | head -10 > hello.txt
+	614 history | head -10 > hello.txt
+	615 exit
+	616 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	617 history | head -10 > hello.txt
+	618 history | head -10 > hello.txt
+	619 exit
+	620 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	621 history | head -10 > hello.txt
+	622 history | head -10 > hello.txt
+	623 exit
+	624 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	625 history | head -10 > hello.txt
+	626 history | head -10 > hello.txt
+	627 exit
+	628 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	629 history | head -10 > hello.txt
+	630 history | head -10 > hello.txt
+	631 exit
+	632 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	633 history | head -10 > hello.txt
+	634 history | head -10 > hello.txt
+	635 exit
+	636 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	637 history | head -10 > hello.txt
+	638 history | head -10 > hello.txt
+	639 exit
+	640 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	641 history | head -10 > hello.txt
+	642 history | head -10 > hello.txt
+	643 exit
+	644 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	645 history | head -10 > hello.txt
+	646 history | head -10 > hello.txt
+	647 history | head -10 > hello.txt
+	648 history | head -10 > hello.txt
+	649 history | head -10 > hello.txt
+	650 history | head -10 > hello.txt
+	651 exit
+	652 exit
+	653 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	654 history | head -10 > hello.txt
+	655 history | head -10 > hello.txt
+	656 exit
+	657 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	658 history | head -10 > hello.txt
+	659 history | head -10 > hello.txt
+	660 exit
+	661 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	662 history | head -10 > hello.txt
+	663 history | head -10 > hello.txt
+	664 history | head -10 > hello.txt
+	665 history | head -10 > hello.txt
+	666 exit
+	667 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	668 history | head -10 > hello.txt
+	669 history | head -10 > hello.txt
+	670 exit
+	671 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	672 history | head -10 > hello.txt
+	673 history | head -10 > hello.txt
+	674 exit
+	675 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	676 history | head -10 > hello.txt
+	677 history | head -10 > hello.txt
+	678 exit
+	679 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	680 history | head -10 > hello.txt
+	681 history | head -10 > hello.txt
+	682 exit
+	683 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	684 history | head -10 > hello.txt
+	685 history | head -10 > hello.txt
+	686 history | head -10 > hello.txt
+	687 history | head -10 > hello.txt
+	688 history | head -10 > hello.txt
+	689 history | head -10 > hello.txt
+	690 history | head -10 > hello.txt
+	691 history | head -10 > hello.txt
+	692 exit 
+	693 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	694 history | head -10 > hello.txt
+	695 history | head -10 > hello.txt
+	696 history | head -10 > hello.txt
+	697 history | head -10 > hello.txt
+	698 exit
+	699 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	700 history | head -10 > hello.txt
+	701 history | head -10 > hello.txt
+	702 history | head -10 > hello.txt
+	703 history | head -10 > hello.txt
+	704 history | head -10 > hello.txt
+	705 history | head -10 > hello.txt
+	706 exit
+	707 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	708 history | head -10 > hello.txt
+	709 history | head -10 > hello.txt
+	710 exit
+	711 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	712 history | head -10 1> hello.txt
+	713 history | head -10 1> hello.txt
+	714 exit
+	715 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	716 history | head -10 > hello.txt
+	717 history | head -10 > hello.txt
+	718 exit
+	719 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	720 history | head -10 > hello.txt
+	721 history | head -10 > hello.txt
+	722 exit
+	723 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	724 history | head -10 > hello.txt
+	725 history | head -10 > hello.txt
+	726 exit
+	727 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	728 history | head -10 > hello.txt
+	729 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	730 history | head -10 > hello.txt
+	731 history | head -10 > hello.txt
+	732 exit
+	733 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	734 history | head -10 > hello.txt
+	735 history | head -10 > hello.txt
+	736 exit
+	737 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	738 history | head -10 > hello.txt
+	739 history | head -10 > hello.txt
+	740 exit
+	741 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	742 history | head -10 > hello.txt
+	743 history | head -10 > hello.txt
+	744 exit
+	745 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	746 history | head -10 > hello.txt
+	747 history | head -10 > hello.txt
+	748 exit
+	749 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	750 history | head -10 > hello.txt
+	751 history | head -10 > hello.txt
+	752 exit
+	753 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	754 history | head -10 > hello.txt
+	755 history | head -10 > hello.txt
+	756 exit
+	757 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	758 history | head -10 > hello.txt
+	759 history | head -10 > hello.txt
+	760 exit
+	761 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	762 parsed_redirection[0] = >
+	763 head: write error: Bad file descriptohistory | head -10 > hello.txt
+	764 head: write error: Bad file descriptohistory | head -10 > hello.txt
+	765 exit
+	766 parsed_redirection[0] = >
+	767 exit
+	768 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	769 history | head -10 > hello.txt
+	770 history | head -10 > hello.txt
+	771 exit
+	772 history | head -10 > hello.txt
+	773 history | head -10 > hello.txt
+	774 history | head -10 > hello.txt
+	775 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	776 history | head -10 > hello.txt
+	777 history | head -10 > hello.txt
+	778 exit
+	779 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	780 history | head -10 > hello.txt
+	781 history | head -10 > hello.txt
+	782 exit
+	783 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	784 history | head -10 > hello.txt
+	785 history | head -10 > hello.txt
+	786 exit
+	787 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	788 history | head -10 > hello.txt
+	789 history | head -10 > hello.txt
+	790 exit
+	791 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	792 history | head -10 > hello.txt
+	793 history | head -10 > hello.txt
+	794 exit
+	795 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	796 history | head -10 > hello.txt
+	797 history | head -10 > hello.txt
+	798 exit
+	799 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	800 history | head -10 > plz.txt
+	801 history | head -10 > plz.txt
+	802 cat <hello.plz.txt
+	803 cat < plz.txt
+	804 cat < plz.txt
+	805 exit
+	806 history | wc > plz.txt |pwd
+	807 history | wc > plz.txt |pwd
+	808 history | wc > plz.txt |pwd
+	809 history | wc > plz.txt |pwd
+	810 history | wc > plz.txt
+	811 history | wc > plz.txt
+	812 history | wc > plz.txt
+	813 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	814 history | wc > plz.txt
+	815 history | wc > plz.txt
+	816 exit
+	817 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	818 history | wc > plz.txt
+	819 history | wc > plz.txt
+	820 history | wc > plz.txt |pwd
+	821 history | wc > plz.txt |pwd
+	822 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	823 history | wc > plz.txt |pwd
+	824 history | wc > plz.txt |pwd
+	825 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	826 history | wc > plz.txt |pwd
+	827 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	828 history | tail -10 > plzwork.txt
+	829 history | tail -10 > plzwork.txt
+	830 history | tail -10 > plzwork.txt | pwd
+	831 cat < plz.txt > plz3.txt |wc
+	832 cat < plz.txt > plz3.txt |wc
+	833 Command not found
+	834 M¿÷UˆL¿÷UL¿÷U¨O¿÷UˆO¿÷UhO¿÷UèN¿÷UhN¿÷UèM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷Uh	835 M¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL	836 ¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿	837 ÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷	838 UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷U	839 hL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷U	840 hL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷Uh	841 M¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM	842 ¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿	843 ÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷U÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷Uh	844 L¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL	845 ¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿	846 ÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UèK¿÷UèK¿÷UCommand not found
+	847 xK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷Ux	848 K¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK	849 ¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿	850 ÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UhL¿÷UxK¿÷UxK¿÷UCommand not found
+	851 xK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷Ux	852 K¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK	853 ¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿	854 ÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UxK¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UèL¿÷UCommand not found
+	855 Command not found
+	856 èL¿÷UL¿÷UhM¿÷UL¿÷UhM¿÷UhM¿÷UCommand not found
+	857 ˆL¿÷UˆL¿÷UCommand not found
+	858 ˆL¿÷UˆL¿÷UhM¿÷UˆL¿÷UˆL¿÷UèM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷Uh	859 L¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL	860 ¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿	861 ÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷	862 UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷UhM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷UhL¿÷UhM¿÷U	863 hM¿÷UèL¿÷UhL¿÷UhL¿÷UèL¿÷UhL¿÷Uexport PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	864 cat < plz.txt > plz3.txt |wc
+	865 ˜Qßb¦Mßb¦Mßb¦Mßb¦Mßb¦˜Qßb¦ˆQßb¦ˆQßb¦ˆQßb¦ˆQßb¦cat < plz.txt > plz3.txt |wc
+	866 exit
+	867 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	868 cat < plz.txt > plz3.txt |wc
+	869 ˜Q_ùöM_ùöM_ùöM_ùöM_ùö˜Q_ùöˆQ_ùöˆQ_ùöˆQ_ùöˆQ_ùöcat < plz.txt > plz3.txt |wc
+	870 cat < plz.txt > plz3.txt
+	871 cat < plz.txt |wc > plz3.txt
+	872 exit
+	873 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	874 cat < plz.txt |wc > plz3.txt
+	875 cat < history.txt | head -10 < plz2.txt
+	876 cat < history.txt | head -10 > plz2.txt
+	877 cat < history.txt | head -10 > plz2.txt
+	878 cat < history.txt | head -10 > plz2.txt
+	879 exit
+	880 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	881 cat < input.txt
+	882 cat < input.txt
+	883 history > history2.txt

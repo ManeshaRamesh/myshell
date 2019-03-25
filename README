@@ -8,3 +8,9 @@ This folder contains the following:
 	4. References
 	5. Makefile
 	6. README
+
+
+FOR redirection, please enter as follows with spaces
+
+2> filename
+< filename

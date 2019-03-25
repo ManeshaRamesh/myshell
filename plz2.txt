@@ -1,0 +1,10 @@
+ERROR: Success
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+ls
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+ls
+cat README
+exit
+ls

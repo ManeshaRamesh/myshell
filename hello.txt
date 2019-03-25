@@ -1,0 +1,10 @@
+YAY	1 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	2 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	3 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	4 ls
+	5 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+	6 ls
+	7 cat README
+	8 exit
+	9 ls
+	10 exit

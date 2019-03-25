@@ -8,6 +8,9 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <errno.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #define SIZE_ARGS 50
 #define READ 0
 #define WRITE 1
@@ -24,6 +27,7 @@
 #define TRUE 1
 #define SUCCESS 1
 #define FAILURE 0
+#define NONE 0
 
 //global variables
 char* builtin_commands[] = {"cd","pwd", "export", "history", "exit"};
@@ -186,6 +190,9 @@ char** parse(char* input, FILE* fptr){
 		}
 		fprintf(fptr,"%s",input);
 	}
+	if (input == NULL){
+		return NULL;
+	}
 	//fclose(fptr);
 	char * arg;// to store each argument of teh prrsed string
 	char ** args;// this stores all teh srguments obtained in the string
@@ -270,6 +277,8 @@ void search_sysPath(char** args){
 	strcpy(file_paths, list.tail->prev->value);
 	char* path = strtok(file_paths, ":\n");//the file paths are stored with ':' as a delimiter	
 	char file_path[DIR_PATH];
+	int i_check;
+
 	while(path!=NULL){
 		strcpy(file_path, path);
         	strcat(file_path, "/");//concatenat the command executive file
@@ -347,7 +356,23 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 	int pipe_i;
 	int cmd;
 	int fd;
+	int flag = FALSE;
 	char ** parsed_command;
+	char ** parsed_command2;
+	char* pipedcmds;
+	char* piped_cmd_store =  malloc(sizeof(char)*SIZE_ARGS);
+	char* redirection;
+	int redirecfd_in;
+	int redirecfd_out;
+	int redirection_in;
+	int redirection_out;
+	int i;
+	int j;
+	int count;
+	char ** parsed_redirection = NULL;
+	int redirection_count;
+	char *redirin_filename;
+	char *redirout_filename;
 	//allocate space for the file descriptors
 	int (*pipes)[2] = calloc(pipe_count*(sizeof(int[2])), 1);
 	if (pipes== NULL){fprintf(stderr, "ERROR: %s\n", strerror(errno));}
@@ -355,50 +380,192 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 	for(pipe_i = BEGIN_COUNT;pipe_i< pipe_count; pipe_i++){
 		pipe(pipes[pipe_i]);
 	}
+
+	//check is any of teh commands have '>' or '<'
 	//the loop that forks to create a child process for each command
 	for( int cmd = 0; cmd<=pipe_count; cmd++){
 		//parse the command and get the command in a NULL terminated array
-		parsed_command = parse(piped_cmds[cmd], NULL);
+		parsed_command2 = parse(piped_cmds[cmd], NULL);
+		//check if the command has any redirections
+		i =0;
+		while (parsed_command2[i] != NULL){
+				//printf("%s\n",parsed_command2[i]);
+				if(strstr(parsed_command2[i], ">") || strstr(parsed_command2[i], "<")){
+					//printf("yess%s\n",parsed_command2[i]);
+					break;
+				}
+				i++;
+		}
+		//is there are redirections
+		if (parsed_command2[i] != NULL){ //if i reaches the end of th array without meeing an '<' or '>'
+				parsed_command = malloc(sizeof(char*)*i); //allocate memory for parsed_command. 
+				parsed_redirection = malloc(sizeof(char*)*10); //allocate memory for redirection
+				//copy everything before the first '<' or '>' into parsed_command
+				for (count = 0; count< i; count++){
+					parsed_command[count] = malloc(strlen(parsed_command2[count]));
+					strcpy(parsed_command[count], parsed_command2[count]);
+				}
+				//add a NULL terminator
+				parsed_command[i] = NULL;
+				//store the redirection part of the array in an another array called parsed_redirection
+				j =  i;
+				while(parsed_command2[j] != NULL){
+					parsed_redirection[j-i] = malloc(strlen(parsed_command2[j]));
+					strcpy(parsed_redirection[j-i], parsed_command2[j]);
+					j++;
+				}
+				parsed_redirection[j] = NULL;
+				redirection_count = j-i; //get the size of the parsed_redirection
+				
+		}
+		//if there are no redirections
+		else{
+			parsed_command = parsed_command2;
+			parsed_redirection = NULL;
+		}
+		
+
 
 		//child process for every command
 		int pid;
 		if ((pid=fork())==0){
+			setvbuf (stdout, NULL, _IONBF, BUFSIZ);
 			//printf("Child[%d]: ", cmd);
 			if(cmd==0){
-				//printf("Start Process - %s\n",parsed_command[0]);
+				printf("Start Process - %s\n",parsed_command[0]);
+				
 				//makes the STDOUT file descriptor point to the write end of the pipe.  
-				dup2(pipes[cmd][WRITE], STDOUT_FILENO);
-				//close all the pipes in this child process
-				for(pipe_i = 0; pipe_i< pipe_count; pipe_i++){
-					for(fd =0; fd< FD_PIPE; fd++){
-						close(pipes[pipe_i][fd]);
+				if (pipe_count != 0){
+					dup2(pipes[cmd][WRITE], STDOUT_FILENO);
+					//close all the pipes in this child process
+					for(pipe_i = 0; pipe_i< pipe_count; pipe_i++){
+						for(fd =0; fd< FD_PIPE; fd++){
+							close(pipes[pipe_i][fd]);
+						}
 					}
+				}
+				if (parsed_redirection ==NULL){
+					printf("End Process: no redirection\n");
+					continue;
+				}
+				else{
+						for(redirection_out = redirection_count-1; redirection_out >= 0 ;redirection_out--){
+							// fflush(stdout);
+							//printf("parsed_redirection[%d] = %s\n", redirection_out, parsed_redirection[redirection_out]);
+							//fflush(stdout);
+							//printf("%s", parsed_redirection[redirection_out						//fflush(stdout);
+							if (strstr(parsed_redirection[redirection_out], ">") != NULL) {
+								//printf("%p\n", strstr(parsed_redirection[redirection_out], ">"));
+								//printf("parsed_redirection[%d] = %s\n", redirection_out, parsed_redirection[redirection_out]);
+								redirout_filename = parsed_redirection[++redirection_out];
+								//printf("%s",redirout_filename);
+								redirecfd_out = open(redirout_filename, O_CREAT|O_WRONLY|O_TRUNC, 0777);
+								if(!dup2(redirecfd_out,STDOUT_FILENO)){
+									printf("ERROR: %s\n",strerror(errno));
+								}
+								break;
+							}
+
+						}
+						
+
+						for(redirection_in = redirection_count-1; redirection_in >= 0 ;redirection_in--){
+							// fflush(stdout);
+							//printf("parsed_redirection[%d] = %s\n", redirection_out, parsed_redirection[redirection_out]);
+							//fflush(stdout);
+							//printf("%s", parsed_redirection[redirection_out						//fflush(stdout);
+							if (strstr(parsed_redirection[redirection_in], "<") != NULL) {
+								//printf("%p\n", strstr(parsed_redirection[redirection_out], ">"));
+								redirin_filename = parsed_redirection[++redirection_in];
+								//printf("%s",redirout_filename);
+								redirecfd_in = open(redirin_filename, O_RDONLY, 0777);
+								if(!dup2(redirecfd_in,STDIN_FILENO)){
+									printf("ERROR: %s\n",strerror(errno));
+								}
+								break;
+							}
+
+						}
+					flag = TRUE;
+
 				}
 				//checkif it is builtin
 				int command_num = builtin_check(parsed_command);
 				int status = getCommand(parsed_command, command_num, fstream, TRUE);
+				close(redirecfd_in);
+				close(redirecfd_out);
 				if (status == EXIT){break;}		
 				
 			}
 			else if(cmd== pipe_count){
-				//printf("End Process - %s\n", parsed_command[0]);
+				printf("End Process - %s\n", parsed_command[0]);
+				//if (pipe_count != 0){	
 				// //makes the STDIN file descriptor point to the read end of the pipe. 
-				dup2(pipes[cmd-1][READ], STDIN_FILENO);
-				//close all the pipes in this child process
-				for(pipe_i = BEGIN_COUNT; pipe_i< pipe_count; pipe_i++){
-					for(fd =BEGIN_COUNT; fd< FD_PIPE; fd++){
-						close(pipes[pipe_i][fd]);
+					dup2(pipes[cmd-1][READ], STDIN_FILENO);
+					//close all the pipes in this child process
+					for(pipe_i = BEGIN_COUNT; pipe_i< pipe_count; pipe_i++){
+						for(fd =BEGIN_COUNT; fd< FD_PIPE; fd++){
+							close(pipes[pipe_i][fd]);
+						}
 					}
+				//}
+				
+				if (parsed_redirection ==NULL){
+					printf("End Process: no redirection\n");
+					continue;
 				}
+				else{
+						for(redirection_out = redirection_count-1; redirection_out >= 0 ;redirection_out--){
+							// fflush(stdout);
+							//printf("parsed_redirection[%d] = %s\n", redirection_out, parsed_redirection[redirection_out]);
+							//fflush(stdout);
+							//printf("%s", parsed_redirection[redirection_out						//fflush(stdout);
+							if (strstr(parsed_redirection[redirection_out], ">") != NULL) {
+								//printf("%p\n", strstr(parsed_redirection[redirection_out], ">"));
+								//printf("parsed_redirection[%d] = %s\n", redirection_out, parsed_redirection[redirection_out]);
+								redirout_filename = parsed_redirection[++redirection_out];
+								//printf("%s",redirout_filename);
+								redirecfd_out = open(redirout_filename, O_CREAT|O_WRONLY|O_TRUNC, 0777);
+								if(!dup2(redirecfd_out,STDOUT_FILENO)){
+									printf("ERROR: %s\n",strerror(errno));
+								}
+								break;
+							}
+
+						}
+						
+
+						for(redirection_in = redirection_count-1; redirection_in >= 0 ;redirection_in--){
+							// fflush(stdout);
+							//printf("parsed_redirection[%d] = %s\n", redirection_out, parsed_redirection[redirection_out]);
+							//fflush(stdout);
+							//printf("%s", parsed_redirection[redirection_out						//fflush(stdout);
+							if (strstr(parsed_redirection[redirection_in], "<") != NULL) {
+								//printf("%p\n", strstr(parsed_redirection[redirection_out], ">"));
+								redirin_filename = parsed_redirection[++redirection_in];
+								//printf("%s",redirout_filename);
+								redirecfd_in = open(redirin_filename, O_RDONLY,777);
+								if(!dup2(redirecfd_in,STDIN_FILENO)){
+									printf("ERROR: %s\n",strerror(errno));
+								}
+								break;
+							}
+
+						}
+					flag = TRUE;
+
+				}
+				
 				int command_num = builtin_check(parsed_command);
 				int status = getCommand(parsed_command, command_num, fstream, TRUE);
+				close(redirecfd_in);
+				close(redirecfd_out);
 				if (status == EXIT){break;}			
 			}
 			else{
-				//printf("Middle Process - %s\n", parsed_command[0]);
-				//makes the STDIN file descriptor point to the read end of the pipe before the command. 
+				printf("Middle Process - %s\n", parsed_command[0]);
+				
 				dup2(pipes[cmd-1][READ], STDIN_FILENO);
-				//makes the STDOUT file descriptor point to the write end of the pipe after the command. 
 				dup2(pipes[cmd][WRITE], STDOUT_FILENO);
 				//close all the pipes in this child process
 				for(pipe_i = BEGIN_COUNT; pipe_i< pipe_count; pipe_i++){
@@ -406,13 +573,67 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 						close(pipes[pipe_i][fd]);
 					}
 				}
+				
+
+				if (parsed_redirection ==NULL){
+					printf("End Process: no redirection\n");
+					continue;
+				}
+				else{
+						for(redirection_out = redirection_count-1; redirection_out >= 0 ;redirection_out--){
+							// fflush(stdout);
+							//printf("parsed_redirection[%d] = %s\n", redirection_out, parsed_redirection[redirection_out]);
+							//fflush(stdout);
+							//printf("%s", parsed_redirection[redirection_out						//fflush(stdout);
+							if (strstr(parsed_redirection[redirection_out], ">") != NULL) {
+								//printf("%p\n", strstr(parsed_redirection[redirection_out], ">"));
+								//printf("parsed_redirection[%d] = %s\n", redirection_out, parsed_redirection[redirection_out]);
+								redirout_filename = parsed_redirection[++redirection_out];
+								//printf("%s",redirout_filename);
+								redirecfd_out = open(redirout_filename, O_CREAT|O_WRONLY|O_TRUNC, 0777);
+								if(!dup2(redirecfd_out,STDOUT_FILENO)){
+									printf("ERROR: %s\n",strerror(errno));
+								}
+								break;
+							}
+
+						}
+						
+
+						for(redirection_in = redirection_count-1; redirection_in >= 0 ;redirection_in--){
+							// fflush(stdout);
+							//printf("parsed_redirection[%d] = %s\n", redirection_out, parsed_redirection[redirection_out]);
+							//fflush(stdout);
+							//printf("%s", parsed_redirection[redirection_out						//fflush(stdout);
+							if (strstr(parsed_redirection[redirection_in], "<") != NULL) {
+								//printf("%p\n", strstr(parsed_redirection[redirection_out], ">"));
+								redirin_filename = parsed_redirection[++redirection_in];
+								//printf("%s",redirout_filename);
+								redirecfd_in = open(redirin_filename, O_RDONLY, 0777);
+								if(!dup2(redirecfd_in,STDIN_FILENO)){
+									printf("ERROR: %s\n",strerror(errno));
+								}
+								break;
+							}
+
+						}
+					flag = TRUE;
+
+				}
+
+
 				int command_num = builtin_check(parsed_command);
 				int status = getCommand(parsed_command, command_num, fstream, TRUE);
+				close(redirecfd_in);
+				close(redirecfd_out);
 				if (status == EXIT){break;}	
 				
 			}
 			
 			exit(0);
+		}
+		if (flag == TRUE){
+			break;
 		}
 	}
 	//closes all the pipes
