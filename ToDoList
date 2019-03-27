@@ -1,10 +1,7 @@
 To do List
 
-1. Empty strings also get added to the history file
-2. Need to remove quotes from the arguments - grep command
-3. add redirection
-4. implment echo command
-5. double free or corruption error when freeing pipes in shell.c
+double free or corruption error when freeing pipes in shell.c
 6. handling unexpected termination
-7. seg fault when only ! is entered
 8. infinite loop of >> when I enter cat > input.txt
+9. Execute a program with chsell
+10. When I rin executable file ./ it exits altogether
