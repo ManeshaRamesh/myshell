@@ -1,7 +1,13 @@
-Name: Manesha
-NetID: mr4684
+## Name: Manesha Ramesh
+## Email: manesharamesh@gmail.com
 
-This folder contains the following: 
+# This is a shell that has its own Environment variables and can do the follwing: 
+1. Piped Commands
+2. Redirection
+3. Simple commands 
+4. Builtin commands include pwd, cd, exit, history and echo
+
+# This folder contains the following: 
 	1. main.c
 	2. shell.c
 	3. shell.h
@@ -10,4 +16,3 @@ This folder contains the following:
 	6. README
 
 
-Note: Please make sure to use spaces for redirection and pipes
