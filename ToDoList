@@ -1,7 +1,0 @@
-To do List
-
-double free or corruption error when freeing pipes in shell.c
-6. handling unexpected termination
-8. infinite loop of >> when I enter cat > input.txt
-9. Execute a program with chsell
-10. When I rin executable file ./ it exits altogether

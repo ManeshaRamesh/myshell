@@ -12,7 +12,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-#define SIZE_ARGS 50
+#define SIZE_ARGS 100
 #define READ 0
 #define WRITE 1
 #define EXIT 0
@@ -190,53 +190,140 @@ void export_path(char**args){
 
 }
 
+char* convert_command(char * input, FILE* fstream){ // takes care of !(number) in teh user input
+	
+	char* cmd; // each command
+	char* replace;
+	char * command = malloc(SIZE_ARGS);
+	char* redirection = NULL;
+	char* num_string;
+	cmd = strtok(input, "|\n");
+	int count = 0;
+	int i;
+	char * convert_input = malloc(3* strlen(input)); //allocated space for the retures string
+	convert_input[0] = 0;
+
+	// for each command in a pipe 
+		while(cmd != NULL){
+				//printf("[%d] cmd: %s\n",count, cmd );
+				if (cmd[0] == '!'){ // if there is a '!'
+					replace = malloc(SIZE_ARGS);
+				//searches for redirections like !5 > whatev
+				//if none
+					if (strchr(cmd, '<') == NULL && strchr(cmd, '>') == NULL){
+						
+						char* num_string = ++cmd;//gets teh number after '>' or '<'
+						cmd--;
+						int size = strcspn(num_string," \n");
+						int j;
+						for(j =BEGIN_COUNT;j<size;j++){ //in case ! is follwed by some random letters instead of digits
+							if(!isdigit((unsigned char)num_string[j]))
+							{
+								printf("Error: Event not found\n"); 
+								return(NULL);
+							}//check is each character after the ! is a digit
+						} 
+						int num = atoi(num_string);//change the number into a integer
+						i =0;
+						//fptrFind = fopen("history.txt", "r");//ope the history file
+						rewind(fstream);
+						//replace = malloc(SIZE_ARGS);
+						while(i<num){//loop to iterate through the ist of commands in the file
+							if(!fgets(replace, SIZE_ARGS, fstream)){//if file stream cannot read from file, print that even is not found in teh history file
+								printf("Error: Event not found\n");
+								return(NULL);
+							}
+							
+							i++;			
+						}
+						
+						if ( count != 0){
+							strcat(convert_input, "|");
+						}
+						strncat(convert_input, replace, strlen(replace)-1);
+						strncat(convert_input, " ", 1);
+
+
+					}
+					//if there are redirections
+					else{
+
+						//printf("Redirected: %s\n",cmd );
+						int red_size = 0;
+						red_size = strcspn(cmd, "<>");
+						char * redirection = cmd + red_size;
+						//printf("%s\n", redirection);
+						char* num_string = ++cmd;//get the nuumber after the
+						cmd--;
+						int size = strcspn(num_string," \n");
+						int j;
+						//printf("%s", num_string);
+						for(j =BEGIN_COUNT;j<size;j++){ //in case ! is follwed by some random letters instead of digits
+							if(!isdigit((unsigned char)num_string[j]))
+							{
+								printf("Error: Event not found\n"); 
+								return(NULL);
+							}//check is each character after the ! is a digit
+						} 
+						int num = atoi(num_string);//change the number into a integer
+						i =0;
+						//fptrFind = fopen("history.txt", "r");//ope the history file
+						rewind(fstream);
+						while(i<num){//loop to iterate through the ist of commands in the file
+							if(!fgets(replace, SIZE_ARGS, fstream)){//if file stream cannot read from file, print that even is not found in teh history file
+								printf("Error: Event not found\n");
+								return(NULL);
+							}
+							//printf("[%d] %s", i, replace);
+							i++;			
+						}
+						//concatenates the broken peices together to create teh converted user input
+						char* command = malloc(strlen(redirection)+ strlen(replace));
+						strncat(command,replace, strlen(replace)-1);
+						strncat(command," ", 1);
+						strncat(command, redirection, strlen(redirection));
+						//printf( "command: %s\n", command);
+						//printf("before strcat: %s", cmd);
+						if ( count != 0){
+							strcat(convert_input, "|");
+						}
+						strcat(convert_input, command);
+						//printf("after strcat: %s", cmd);
+					}
+				}
+				else{ // if there are no exclamation points ti just returns the original input
+					//char * cmd_clone = malloc(strlen(cmd));
+					//printf("Need not be converted: %s\n",cmd );
+					if ( count != 0){
+							strcat(convert_input, "|");
+						}
+						strcat(convert_input, cmd);
+				}
+				
+				cmd = strtok(NULL, "|\n");
+				//printf("again: %s\n", cmd);
+				count++;
+				//free(replace);
+		} 
+
+
+		strcat(convert_input, "\n");
+		free(command);
+		return convert_input;
+		
+
+	
+	
+	
+}
 //function call for reading user input in the shell
-char* read_input(FILE* fstream){
+char* read_input(){
 	char* input;//where the input is stored
 	size_t size_input = 0; //a vraible to store the lenght of the input as required by the getline function
-	getline(&input, &size_input, stdin);//reads input from the user
-	//if the user enters !2 or !9 to get a command from history
-	//("%c", input[1]);
-	if (input[0] == '!' && input[1] != '\n'){
-		char* num_string = strtok(input, "!\n");//get the nuumber
-		int j;
-		//printf("%d", strlen(num_string));
-		for(j =BEGIN_COUNT;j<strlen(num_string);j++){ //in case ! is follwed by some random letters instead of digits
-			if(!isdigit((unsigned char)num_string[j]))
-			{
-				printf("Error: Event not found\n"); 
-				return("");
-			}//check is each character after the ! is a digit
-		} 
-			int num = atoi(num_string);//change the number into a integer
-			int i =0;
-			//fptrFind = fopen("history.txt", "r");//ope the history file
-			rewind(fstream);
-			while(i<num){//loop to iterate through the ist of commands in the file
-				if(!fgets(input, 200, fstream)){//if file stream cannot read from file, print that even is not found in teh history file
-					printf("Error: Event not found\n");
-					return("");
-				}
-				i++;			
-			}
-
-			//fclose(fptrFind);
-	
-	}	
+	getline(&input, &size_input, stdin);//reads input from the user	
 	return(input);//returns the input to the main function
 }
 char** parse(char* input, FILE* fptr){
-	//FILE *fptr = fopen("history.txt", "a");
-	if(fptr !=NULL){
-		if (!feof(fptr)){
-			fseek(fptr, 0, SEEK_END);
-		}
-		fprintf(fptr,"%s",input);
-	}
-	if (input == NULL){
-		return NULL;
-	}
-	//fclose(fptr);
 	char * arg;// to store each argument of teh prrsed string
 	char ** args;// this stores all teh srguments obtained in the string
 	int i = 0;// the counter for the dynamica array
@@ -248,6 +335,7 @@ char** parse(char* input, FILE* fptr){
 		i++;//counter
 	}
 	args[i] = NULL;//the last pointer in the array points tp NULL to mark teh end of teh array
+	//fprintf(fptr,"parse end\n");
 	return args;//returns the array
 }
 
@@ -310,11 +398,10 @@ void print_history(FILE* fstream){
 	while(fgets(line, LINE_SIZE, fstream) !=NULL){	
 	//	printf("printing");
 		fprintf(stdout,"\t%d %s", i, line);
+
 		i++;
 	}
-	//printf("^");
-	//close file stream
-	//fclose(fstream);
+	
 }
 //search if command is an external command
 int search_sysPath(char** args, int pipe){
@@ -330,14 +417,26 @@ int search_sysPath(char** args, int pipe){
         	strcat(file_path,args[0]);
 		if(access(file_path, X_OK)==0){
 			//if the executive fle for the command exists in the file path, then print the following message
-			//if(fork() == 0){
+			if (pipe== FALSE){
+				if(fork() == 0){
 
 				execvp(file_path, args);
 				free(file_paths);
-				exit(EXIT);
-			//}
-			//else wait(NULL);
-			//return;
+				exit(0);
+				}
+				else{
+					wait(NULL);
+					free(file_paths);
+					return FOUND;
+				}
+
+			}
+			else{
+				execvp(file_path, args);
+				free(file_paths);
+				return FOUND;
+			}
+			
 		}
 		path =strtok(NULL, ":\n");
 		
@@ -351,11 +450,13 @@ int search_sysPath(char** args, int pipe){
 }
 
 
+// implementation of echo command
+
 void echo_input(char** parsed){
 	int i = 1;
 	char* value;
 	while( parsed[i] != NULL){
-		if (parsed[i][0] == '$'){
+		if (parsed[i][0] == '$'){ // if there is a dollar sign search for variable and replace it with teh value
 			
 			value = search_env(++parsed[i]);
 			printf("%s ", value);
@@ -371,7 +472,9 @@ void echo_input(char** parsed){
 
 //the funtion that determines which function to acll for any user command that the user enters
 int getCommand(char** parsed, int command_num, FILE* fstream, int piped){
+	//fprintf(fstream, "getCommand start\n");
 	int status_change = CONTINUE;
+	int pid;
 	if (strstr(parsed[0], "./") == NULL){
 		switch (command_num){
 		case 0://cd
@@ -397,11 +500,17 @@ int getCommand(char** parsed, int command_num, FILE* fstream, int piped){
 		case 5:
 			echo_input(parsed);
 			break;
-		default: //if it is not a built in command
-			//printf("it is an external command \n");
-			if(piped ==FALSE){
+		default: 
+			//if it isn't one of teh builtin commands 
+			search_sysPath(parsed, piped);
+				
+			break;
+		}
+	}
+	else{ // if teh command is an executable like "./whatev"
+		if(piped ==FALSE){
 				if(fork()==0){
-					search_sysPath(parsed, FALSE);
+					execvp(parsed[0], parsed);
 					exit(0);
 				}
 				 else{
@@ -409,26 +518,21 @@ int getCommand(char** parsed, int command_num, FILE* fstream, int piped){
 				}
 			}
 			else{
-				search_sysPath(parsed, TRUE);
+				execvp(parsed[0], parsed);
 			}
-			break;
-
-
-		}
 	}
-	else{
-		execvp(parsed[0], parsed);
-	}
-
+//fprintf(fstream, "getCommand end\n" );
 return(status_change);
 }
 //takes in the parsed funtion, checks if it is builtin and reads status change is user enters exit
 int execute(char** parsed, FILE* fstream){
+	//(fstream, "execute start\n");
 	if (size(parsed )==0 ){
 		return(1);
 	}	
 	int command_num = builtin_check(parsed);
 	int status = getCommand(parsed, command_num, fstream, FALSE);	
+	//fprintf(fstream, "execute end\n");
 	return(status);
 }
 
@@ -457,6 +561,8 @@ int sysPath_check(char ** args){
 	return(FALSE);
 }
 
+
+//handles redirections and pipes
 int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 	//create the file descriptors for the pipes
 	int pipe_i;
@@ -467,7 +573,6 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 	char ** parsed_command;
 	char ** parsed_command2;
 	char* pipedcmds;
-	//char* piped_cmd_store =  malloc(sizeof(char)*SIZE_ARGS);
 	char* redirection;
 	int redirecfd_in;
 	int redirecfd_out;
@@ -481,11 +586,12 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 	char *redirin_filename;
 	char *redirout_filename;
 	char * check_command;
+	char * std;
 	char ** check_command_pass = malloc(sizeof(char*)*2);
 	int check_flag = ENTER_LOOP;
+	int redirection_flag = FALSE;
 
-	//check if all the commands are executable
-	
+	//checks if commands are executable. If not it tells the user before creating pipes
 	for(i =0; i <=pipe_count; i++){
 		check_command = malloc(strlen(piped_cmds[i]));
 		strcpy(check_command,piped_cmds[i]);
@@ -514,6 +620,9 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 		for( int cmd = 0; cmd<=pipe_count; cmd++){
 		//1. PARSE COMMAND
 			//parse the command and get the command in a NULL terminated array
+
+			
+
 			parsed_command2 = parse(piped_cmds[cmd], NULL);
 		
 
@@ -532,6 +641,7 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 			}
 			//if there are redirections
 			if (parsed_command2[i] != NULL){ 
+				redirection_flag = TRUE;
 				parsed_command = malloc(sizeof(char*)*i); //allocate memory for parsed_command. 
 				parsed_redirection = malloc(sizeof(char*)*10); //allocate memory for redirection
 				//copy everything before the first '<' or '>' into parsed_command
@@ -556,6 +666,7 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 			}
 			//if there are no redirections
 			else{
+				redirection_flag = FALSE;
 				//without allocating space for parsed_command, let it point it to the memory location where parsed_command2 is stored
 				parsed_command = parsed_command2;
 				//since there is no redirection, this can just point to NULL
@@ -571,7 +682,7 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 		//4. THE FIRST COMMAND IN A PIPED PROCESS
 
 				if(cmd==0){
-					//printf("[%d]First Process - %s\n",cmd,parsed_command[0]);
+					// printf("[%d]First Process - %s\n",cmd,parsed_command[0]);
 					
 					//if there are pipes
 					if (pipe_count != 0){
@@ -586,31 +697,33 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 					}
 					
 					if (parsed_redirection ==NULL){
-						//printf("[%d]First Process: No Redirection\n", cmd);
+						// printf("[%d]First Process: No Redirection\n", cmd);
 					}
 					else{
+							// printf("[%d]First Process: Redirection\n", cmd);
+							// output redirection
 							for(redirection_out = redirection_count-1; redirection_out >= 0 ;redirection_out--){
-								if (strstr(parsed_redirection[redirection_out], ">") != NULL) {
+								if ((std = strchr(parsed_redirection[redirection_out], '>')) != NULL) {
+									//printf("%c\n", *(--std));
+									//gets filename
 									redirout_filename = parsed_redirection[++redirection_out];
 									redirecfd_out = open(redirout_filename, O_CREAT|O_WRONLY|O_TRUNC, 0777);
-									if(!dup2(redirecfd_out,STDOUT_FILENO)){
-										//printf("ERROR: %s\n",strerror(errno));
+									if( *(--std) == '2' ){ // if output redirection is for 2>
+										dup2(redirecfd_out,STDERR_FILENO);
+									}
+									else{
+										//if output redirection is for stdout
+									dup2(redirecfd_out,STDOUT_FILENO);
 									}
 									break;
 								}
 
 							}
-							
+							//input redirection
 
 							for(redirection_in = redirection_count-1; redirection_in >= 0 ;redirection_in--){
-								// fflush(stdout);
-								//printf("parsed_redirection[%d] = %s\n", redirection_out, parsed_redirection[redirection_out]);
-								//fflush(stdout);
-								//printf("%s", parsed_redirection[redirection_out						//fflush(stdout);
 								if (strstr(parsed_redirection[redirection_in], "<") != NULL) {
-									//printf("%p\n", strstr(parsed_redirection[redirection_out], ">"));
 									redirin_filename = parsed_redirection[++redirection_in];
-									//printf("%s",redirout_filename);
 									redirecfd_in = open(redirin_filename, O_RDONLY, 0777);
 									if(!dup2(redirecfd_in,STDIN_FILENO)){
 										//printf("ERROR: %s\n",strerror(errno));
@@ -624,9 +737,9 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 					}
 					//checkif it is builtin
 					command_num = builtin_check(parsed_command);
-					
-					getCommand(parsed_command, command_num, fstream, 1);
-					
+					execute command
+					getCommand(parsed_command, command_num, fstream, TRUE);
+					//close file descriptors
 					close(redirecfd_in);
 					close(redirecfd_out);
 						
@@ -638,8 +751,7 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 
 				*/
 				else if(cmd== pipe_count){
-					//printf("[%d]Last Process - %s\n",cmd, parsed_command[0]);
-					//if (pipe_count != 0){	
+					
 					// //makes the STDIN file descriptor point to the read end of the pipe. 
 						dup2(pipes[cmd-1][READ], STDIN_FILENO);
 						//close all the pipes in this child process
@@ -651,23 +763,22 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 					//}
 					
 					if (parsed_redirection ==NULL){
-						//printf("[%d]Last Process: no redirection\n", cmd);
+						// printf("[%d]Last Process: no redirection\n", cmd);
 					}
 					else{
+							//same as above
+							// printf("[%d]Last Process: with redirection\n", cmd);
 							for(redirection_out = redirection_count-1; redirection_out >= 0 ;redirection_out--){
-								// fflush(stdout);
-								//printf("parsed_redirection[%d] = %s\n", redirection_out, parsed_redirection[redirection_out]);
-								//fflush(stdout);
-								//printf("%s", parsed_redirection[redirection_out						//fflush(stdout);
-								if (strstr(parsed_redirection[redirection_out], ">") != NULL) {
-									//printf("%p\n", strstr(parsed_redirection[redirection_out], ">"));
-									//printf("parsed_redirection[%d] = %s\n", redirection_out, parsed_redirection[redirection_out]);
+								if ((std = strchr(parsed_redirection[redirection_out], '>')) != NULL) {
 									redirout_filename = parsed_redirection[++redirection_out];
-									//printf("%s",redirout_filename);
 									redirecfd_out = open(redirout_filename, O_CREAT|O_WRONLY|O_TRUNC, 0777);
-									if(!dup2(redirecfd_out,STDOUT_FILENO)){
-										//printf("ERROR: %s\n",strerror(errno));
+									if( *(--std) == '2' ){
+										dup2(redirecfd_out,STDERR_FILENO);
 									}
+									else{
+										dup2(redirecfd_out,STDOUT_FILENO);
+									}
+
 									break;
 								}
 
@@ -675,14 +786,9 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 							
 
 							for(redirection_in = redirection_count-1; redirection_in >= 0 ;redirection_in--){
-								// fflush(stdout);
-								//printf("parsed_redirection[%d] = %s\n", redirection_out, parsed_redirection[redirection_out]);
-								//fflush(stdout);
-								//printf("%s", parsed_redirection[redirection_out						//fflush(stdout);
+								
 								if (strstr(parsed_redirection[redirection_in], "<") != NULL) {
-									//printf("%p\n", strstr(parsed_redirection[redirection_out], ">"));
 									redirin_filename = parsed_redirection[++redirection_in];
-									//printf("%s",redirout_filename);
 									redirecfd_in = open(redirin_filename, O_RDONLY,777);
 									if(!dup2(redirecfd_in,STDIN_FILENO)){
 										printf("ERROR: %s\n",strerror(errno));
@@ -697,7 +803,7 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 					
 					command_num = builtin_check(parsed_command);
 					//printf("%d\n", 1);
-					getCommand(parsed_command, command_num, fstream, 1);
+					getCommand(parsed_command, command_num, fstream, TRUE);
 					
 					close(redirecfd_in);
 					close(redirecfd_out);
@@ -709,7 +815,7 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 
 				*/
 				else{
-					//printf("[%d]Middle Process - %s\n",cmd, parsed_command[0]);
+					// printf("[%d]Middle Process - %s\n",cmd, parsed_command[0]);
 					
 					dup2(pipes[cmd-1][READ], STDIN_FILENO);
 					dup2(pipes[cmd][WRITE], STDOUT_FILENO);
@@ -720,23 +826,22 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 						}
 					}
 					if (parsed_redirection ==NULL){
-						//printf("[%d]Middle Process: no redirection\n", cmd);
+						// printf("[%d]Middle Process: no redirection\n", cmd);
 					}
 					else{
+							//same as above
 							for(redirection_out = redirection_count-1; redirection_out >= 0 ;redirection_out--){
-								// fflush(stdout);
-								//printf("parsed_redirection[%d] = %s\n", redirection_out, parsed_redirection[redirection_out]);
-								//fflush(stdout);
-								//printf("%s", parsed_redirection[redirection_out						//fflush(stdout);
-								if (strstr(parsed_redirection[redirection_out], ">") != NULL) {
-									//printf("%p\n", strstr(parsed_redirection[redirection_out], ">"));
-									//printf("parsed_redirection[%d] = %s\n", redirection_out, parsed_redirection[redirection_out]);
+								if ((std = strchr(parsed_redirection[redirection_out], '>')) != NULL) {
+									
 									redirout_filename = parsed_redirection[++redirection_out];
-									//printf("%s",redirout_filename);
 									redirecfd_out = open(redirout_filename, O_CREAT|O_WRONLY|O_TRUNC, 0777);
-									if(!dup2(redirecfd_out,STDOUT_FILENO)){
-										printf("ERROR: %s\n",strerror(errno));
+									if( *(--std) == '2' ){
+										dup2(redirecfd_out,STDERR_FILENO);
 									}
+									else{
+										dup2(redirecfd_out,STDOUT_FILENO);
+									}
+									
 									break;
 								}
 
@@ -744,14 +849,9 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 							
 
 							for(redirection_in = redirection_count-1; redirection_in >= 0 ;redirection_in--){
-								// fflush(stdout);
-								//printf("parsed_redirection[%d] = %s\n", redirection_out, parsed_redirection[redirection_out]);
-								//fflush(stdout);
-								//printf("%s", parsed_redirection[redirection_out						//fflush(stdout);
+								
 								if (strstr(parsed_redirection[redirection_in], "<") != NULL) {
-									//printf("%p\n", strstr(parsed_redirection[redirection_out], ">"));
 									redirin_filename = parsed_redirection[++redirection_in];
-									//printf("%s",redirout_filename);
 									redirecfd_in = open(redirin_filename, O_RDONLY, 0777);
 									if(!dup2(redirecfd_in,STDIN_FILENO)){
 										printf("ERROR: %s\n",strerror(errno));
@@ -763,19 +863,21 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 						// flag = TRUE;
 					}
 					command_num = builtin_check(parsed_command);
-					getCommand(parsed_command, command_num, fstream, 1);
+					getCommand(parsed_command, command_num, fstream, TRUE);
 					close(redirecfd_in);
 					close(redirecfd_out);
 				}
 				
 				exit(0);
 			}
-			//free(parsed_command);
-			//free(parsed_command2);
-			// if (flag == TRUE){
-			// 	free(parsed_redirection);
-			// 	break;
-			// }
+			if (redirection_flag == FALSE){
+				free(parsed_command);
+			}
+			if (redirection_flag == TRUE){
+				free(parsed_command2);
+				free(parsed_command);
+			}
+			
 		}
 		//closes all the pipes
 		for(pipe_i = 0; pipe_i< pipe_count; pipe_i++){
@@ -787,7 +889,9 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 		for( int cmd = BEGIN_COUNT; cmd<=pipe_count; cmd++){
 			wait(NULL);
 		}
-		//free(pipes);
+		if(check_flag != DO_NOT_ENTER_LOOP){
+			free(pipes);
+		}
 	}
 	return(SUCCESS);
 }
@@ -795,10 +899,15 @@ int execute_pipes(char ** piped_cmds, int pipe_count, FILE* fstream){
 int storeInHistory(char* input, FILE* fptr){
 	//printf("here");
 	if(fptr !=NULL){
+		//restores file pointer
 		if (!feof(fptr)){
 			fseek(fptr, 0, SEEK_END);
 		}
+		//fprintf(stdout ,"%s",input);
 		fprintf(fptr,"%s",input);
+		// flushes the buffer
+		fflush(fptr);
+		//printf("printed\n");
 		return(SUCCESS);
 	}
 	else{

@@ -22,6 +22,7 @@ int main(){
     int status=CONTINUE;//controls the loop
     char* command;
     int parsed_input_flag = 0;
+    int input_flag = 0;
     if((fstream = fopen("history.txt", "a+") )== NULL){
         fprintf(stderr, "ERROR: %s", strerror(errno));
     }
@@ -38,12 +39,32 @@ int main(){
             int redin_count = BEGIN_COUNT;
             int redout_count = BEGIN_COUNT;
         	printf(">> ");//directs the user to enter command
-        	input = read_input(fstream);//returns  input of the user a string
-            //if it is just a newline character, no command has been entered. So, it will just skip to the next loop
-        	if(!strcmp(input, "\n")){
+        	input = read_input();//returns  input of the user a string
+            
+            
+            if(!strcmp(input, "\n")){
                     continue;
             }
-            
+            //printf("Send for conversion\n");
+            if(strchr(input, '!') !=NULL){
+                //convert_flag = 1;
+                //=printf("here");
+                input_flag = 1;
+                input = convert_command(input, fstream);
+                //printf("%s\n", input);
+            }
+
+            //printf("converted = %s", input);
+            if (input == NULL){
+                continue;
+            }
+            // printf("%s", input);
+            storeInHistory(input, fstream);
+            //fprintf(fstream,"end\n");
+           // printf("before checking for pipes\n");
+            //if it is just a newline character, no command has been entered. So, it will just skip to the next loop
+        	//fprintf(fstream,"evaluate\n");
+            //printf("here\n");
             //counts the number of '|', '<' and '>' characters
             while (input[iter] != '\n'){
                 if (input[iter] == '|') pipe_count++;
@@ -53,12 +74,14 @@ int main(){
             }
             
             //if it is a simple command
+            //printf("execution\n");
             if (pipe_count == 0){ 
                 //printf("simple command");
                 //is there is redirection
                 if (redin_count || redout_count){
+                    //storeInHistory(input, fstream);
                     piped_cmds = malloc(sizeof(char*)*(pipe_count+1));
-                    storeInHistory(input, fstream);
+                    
                     piped_cmds[0] = input;
                     status = execute_pipes(piped_cmds, 0, fstream);
                     //printf("Simple command with redirection: %d", status);
@@ -66,8 +89,13 @@ int main(){
                 //if there is no redirection
                 else{
                     parsed_input_flag = 1;
+                    //==printf( "writing\n");
+                    //storeInHistory(input, fstream);
+                    
                     parsed_input = parse(input, fstream);// takes teh user input splits it and returns it as an array of strings
+                    //printf( "done\n");
                     status = execute(parsed_input, fstream);
+                    //printf( "done\n");
                     //printf("Simple command with no redirection: %d", status);
                 }
                 
@@ -78,7 +106,7 @@ int main(){
                 
                 //allocates space for the piped cmds
                 piped_cmds = malloc(sizeof(char*)*(pipe_count+1));
-                storeInHistory(input, fstream);
+                //storeInHistory(input, fstream);
                 //separates the commands delimited by pipes
                 int pipe_iter = 0;
                 command = strtok(input, "|");
@@ -94,8 +122,8 @@ int main(){
                 //printf("Piped Command: %d", status);
                 
             }
-                    
-		      
+            //fprintf(fstream,"evaluate end\n");    
+		      //printf("finishing up \n");
 
 		       //int iter;
         	//for (iter = 0; iter<size(parsed_input);iter++ ) {
@@ -105,16 +133,28 @@ int main(){
         	//freeing allocated memory
 
             //free(piped_cmds);
+            // if (input_flag ==1){
+            //     free(input);
+            // }
             if (parsed_input_flag ==1){
+                //printf("free1 \n");
                 free(parsed_input);
+                //printf("freed1 \n");
             }
             if (parsed_input_flag ==0){
+                //printf("free2 \n");
                 free(piped_cmds);
             }
-
+            // if (input_flag == 1){
+            //     free(input);
+            // }
+           // printf("freeed all \n");
+            //fprintf(fstream,"loop\n");
 	}while(status);//exits loop when status is either zero or one
+        //printf("here \n");
         fclose(fstream);
+        //printf("here \n");
         syspath_linkedlist_destructor();
-        system("clear");
+        //printf("return \n");
         //display_list();
 }
